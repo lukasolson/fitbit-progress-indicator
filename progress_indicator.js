@@ -24,8 +24,8 @@ $(document).ready(function() {
 			awakeHours = sleepHour - wakeHour,
 			stepsPerHour = (parseInt(storage["steps_per_min"], 10) * 60) || 100;
 			
-		var steps = parseInt($(".steps_taken .highlight1").text()),
-			goalSteps = parseInt($(".steps_taken").next().find("span").eq(2).text().replace(",", ""));
+		var steps = parseInt($(".steps_taken .highlight1").text() || $(".steps span span").eq(0).text()),
+			goalSteps = parseInt($(".steps_taken").next().find("span").eq(2).text().replace(",", "") || $(".steps span span").eq(2).text());
 		
 		if (steps > goalSteps) {
 			addMessage("Great job! Take the rest of the day off.");
@@ -57,5 +57,5 @@ function addMessage(message) {
 		"	</li>" +
 		"	<li class=\"right\"></li>" +
 		"</ul>"
-	);
+	)[0] || alert(message);
 }
