@@ -20,5 +20,5 @@ function calculateMinutesNeeded(steps, stepsGoal, stepsPerMinute) {
 		stepsBehind = stepsExpected - steps,
 		stepsNeeded = stepsBehind / (1 - stepsGoal / stepsPerMinute / 60 / 24);
 
-	return (stepsBehind > 0 ? stepsNeeded : stepsBehind) / stepsPerMinute;
+	return stepsBehind > 0 ? stepsNeeded / stepsPerMinute : stepsBehind / (stepsGoal / 24 / 60);
 }
