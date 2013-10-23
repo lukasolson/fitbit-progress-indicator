@@ -6,10 +6,6 @@
 	"permissions": [
 		"http://www.fitbit.com/"
 	],
-	"options_page": "options.html",
-	"background": {
-		"scripts": ["background.js"]
-	},
 	"content_scripts": [{
 		"matches": ["http://www.fitbit.com/"],
 		"js": ["jquery.js", "progress_indicator.js"]
