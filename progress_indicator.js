@@ -13,7 +13,8 @@ $(document).ready(function () {
 				element = $("<div>" + (minutesNeeded > 0 ? "Walk" : "Relax") + " for " + Math.abs(minutesNeeded) + " mins<div>")
 					.appendTo(dashHeader)
 					.css({
-						"background-color": (minutesNeeded > 0 ? "#FF5B09" : "#71EB00"),
+						"background-color": (minutesNeeded > 60 ? "#00C7C6" : (minutesNeeded > 0 ? "#FF5B09" : "#71EB00")),
+						"border": "3px solid " + (minutesNeeded > 60 ? "#00AEAD" : (minutesNeeded > 0 ? "#EA5D00" : "#5FD000")),
 						"border-radius": "20px",
 						"color": "white",
 						"padding": "8px 21px",
