@@ -4,8 +4,29 @@ $(document).ready(function () {
 	var timeout = setTimeout(function getSteps() {
 		var newSteps = parseFloat($(".steps .number").eq(0).text());
 		if (newSteps === steps) {
-			var minutesNeeded = Math.ceil(calculateMinutesNeeded(newSteps, parseFloat($(".steps .number").eq(2).text()), 100));
-			return $("<span>(" + (minutesNeeded > 0 ? "Walk" : "Relax") + " for " + Math.abs(minutesNeeded) + " mins)<span>").hide().appendTo($(".steps .main h2")).fadeIn();
+			var stepsGoal = parseFloat($(".steps .number").eq(2).text());
+			if (newSteps >= stepsGoal) return;
+			
+			var minutesNeeded = Math.ceil(calculateMinutesNeeded(newSteps, stepsGoal, 100));
+
+			var dashHeader = $(".dashHeader").css("position", "relative"),
+				element = $("<div>" + (minutesNeeded > 0 ? "Walk" : "Relax") + " for " + Math.abs(minutesNeeded) + " mins<div>")
+					.appendTo(dashHeader)
+					.css({
+						"background-color": "#FF5B09",
+						"border-radius": "20px",
+						"color": "white",
+						"padding": "8px 21px",
+						"line-height": "20px",
+						"position": "absolute"
+					});
+
+			return element
+				.hide()
+				.css({
+					"left": (dashHeader.width() / 2 - element.outerWidth(true) / 2) + "px"
+				})
+				.fadeIn();
 		}
 
 		steps = newSteps;
