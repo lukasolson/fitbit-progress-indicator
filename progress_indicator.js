@@ -14,7 +14,7 @@ $(document).ready(function () {
 					.appendTo(dashHeader)
 					.css({
 						"background-color": (minutesNeeded > 60 ? "#55C2C2" : (minutesNeeded > 0 ? "#FF6D43" : "#9ADE11")),
-						"border": "3px solid " + (minutesNeeded > 60 ? "#009999" : (minutesNeeded > 0 ? "#D54C01" : "#8BC90E")),
+						"box-shadow": "0 3px 3px " + (minutesNeeded > 60 ? "#009999" : (minutesNeeded > 0 ? "#D54C01" : "#8BC90E")),
 						"border-radius": "20px",
 						"color": "white",
 						"padding": "8px 21px",
