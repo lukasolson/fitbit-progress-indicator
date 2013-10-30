@@ -2,9 +2,9 @@ $(document).ready(function () {
 	var steps = -1;
 
 	var timeout = setTimeout(function getSteps() {
-		var newSteps = parseFloat($(".steps .number").eq(0).text());
+		var newSteps = parseFloat($(".steps .number").eq(0).text().replace(",", ""));
 		if (newSteps === steps) {
-			var stepsGoal = parseFloat($(".steps .number").eq(2).text());
+			var stepsGoal = parseFloat($(".steps .number").eq(2).text().replace(",", ""));
 			if (newSteps >= stepsGoal) return;
 			
 			var minutesNeeded = Math.ceil(calculateMinutesNeeded(newSteps, stepsGoal, 100));
@@ -18,7 +18,6 @@ $(document).ready(function () {
 						"border-radius": "20px",
 						"color": "white",
 						"padding": "8px 21px",
-						"line-height": "20px",
 						"position": "absolute"
 					});
 

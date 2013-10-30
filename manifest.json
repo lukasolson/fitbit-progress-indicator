@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Fitbit Progress Indicator",
 	"description": "The extension to help you get back on track with your step goal for the day.",
-	"version": "2.1.2",
+	"version": "2.1.3",
 	"icons": {
 		"16": "images/icon16.png",
 		"48": "images/icon48.png",
